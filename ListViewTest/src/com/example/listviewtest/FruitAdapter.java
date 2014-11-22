@@ -19,11 +19,20 @@ public class FruitAdapter extends ArrayAdapter<Fruit>{
 		// TODO Auto-generated constructor stub
 		resourceId = textViewResourceId;
 	}
+	/**
+	 * convertView is cached View
+	 */
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		Fruit fruit = this.getItem(position);
-		View view = LayoutInflater.from(this.getContext()).inflate(resourceId, null);
+		View view ;
+		// it makes : even you scroll the screen very fast, it can perform good.  
+		if(convertView==null){
+			view = LayoutInflater.from(this.getContext()).inflate(resourceId, null);
+		} else {
+			view = convertView;
+		}
 		ImageView fruitImage=(ImageView)view.findViewById(R.id.fruit_image);
 		TextView fruitName=(TextView)view.findViewById(R.id.fruit_name);
 		fruitImage.setImageResource(fruit.getImageId());
