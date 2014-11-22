@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+     -->
+
+	<Button
+	    android:id="@+id/start_normal_activity"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Start NormalActivity"
+	    />
+	
+	<Button
+	    android:id="@+id/start_dialog_activity"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Start DialogActivity"
+	    />
+	
+	<EditText
+	    android:id="@+id/edit_text"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:hint="Type something here"
+	    android:maxLines="3"
+	    />
+	<Button
+	    android:id="@+id/copy_edit_text"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Copy Edit Text"
+	    />
+    
+	<ImageView
+	    android:id="@+id/image_view"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/ic_launcher"
+	    android:contentDescription="TODO"/>
+	<Button 
+	    android:id="@+id/change_image_view"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="change_image_view"
+	    />
+	
+	<!-- test of ProgressBar -->
+	<!-- 
+	 by default, ProgressBar style is : Round status,
+	 we can change the bar style to 0-100 number style,
+	 by adding :
+	 '''
+	 style="?android:attr/progressBarStyleHorizontal"
+	 android:max="100"
+	 '''
+	 -->
+	<ProgressBar 
+	    android:id="@+id/progress_bar"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    />
+	<Button 
+	    android:id="@+id/change_progress_bar"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="change_progress_bar"
+	    />
+</LinearLayout>
