@@ -9,7 +9,8 @@ import android.database.Cursor;
 public class GetJoke {
 
 	public static List<Joke> lists = new ArrayList<Joke>();
-
+	
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	public static String getNumber(Context context) {
 		// TODO
 		// Cursor cursor=context.getContentResolver().query(uri, projection,

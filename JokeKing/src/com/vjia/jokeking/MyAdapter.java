@@ -13,31 +13,36 @@ public class MyAdapter extends BaseAdapter {
 
 	private Context context;
 	private List<Joke> lists;
-
+	
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	public MyAdapter(List<Joke> lists, Context context) {
 		// TODO Auto-generated constructor stub
 		this.lists = lists;
 		this.context = context;
 	}
 
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	@Override
 	public int getCount() {
 
 		return lists.size();
 	}
 
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	@Override
 	public Object getItem(int position) {
 
 		return lists.get(position);
 	}
 
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	@Override
 	public long getItemId(int position) {
 
 		return position;
 	}
 
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -60,6 +65,7 @@ public class MyAdapter extends BaseAdapter {
 		return convertView;
 	}
 
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	private static class ViewHolder {
 		TextView contentTV;
 		TextView reviewTV;

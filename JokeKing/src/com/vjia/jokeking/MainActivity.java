@@ -9,6 +9,8 @@ public class MainActivity extends Activity {
 
 	private ListView listView;
 	MyAdapter myAdapter;
+	
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -19,6 +21,7 @@ public class MainActivity extends Activity {
 		listView.setAdapter(myAdapter);
 	}
 
+	// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //	@Override
 //	public boolean onCreateOptionsMenu(Menu menu) {
 //		// Inflate the menu; this adds items to the action bar if it is present.
