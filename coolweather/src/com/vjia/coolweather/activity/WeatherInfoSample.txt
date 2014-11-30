@@ -1,0 +1,7 @@
+{
+ "weatherinfo":
+ {
+ 	"city":"昆山","cityid":"101190404","temp1":"21C","temp2":"9c","weather":"多云转小雨","img1":"d1.gif",
+ 	"img2":"n7.gif","ptime":"11:00"
+ }
+}
