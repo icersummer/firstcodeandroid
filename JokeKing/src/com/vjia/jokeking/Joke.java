@@ -34,4 +34,14 @@ public class Joke {
 		this.review = review;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		String s ;
+		s = String.format("Joke ( content [%s], review [%d] )", content, review);
+		return s;
+	}
+	
+	
+
 }
