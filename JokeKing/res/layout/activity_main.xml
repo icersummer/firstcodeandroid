@@ -14,5 +14,11 @@
         android:layout_height="wrap_content"
         >
     </ListView>
+    <Button
+        android:id="@+id/httpTestBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get URL Content"
+        />
 
 </LinearLayout>

@@ -20,8 +20,8 @@ public class GetJoke {
 	/**
 	 * if test, use local fake list data; else get data from URL connection.
 	 */
-//	private static boolean test = Boolean.TRUE;
-	private static boolean test = Boolean.FALSE;
+	private static boolean test = Boolean.TRUE;
+//	private static boolean test = Boolean.FALSE;
 	public static List<Joke> lists = new ArrayList<Joke>();
 	static String jsonStr = null;
 	private static final String ERROR = "error";
