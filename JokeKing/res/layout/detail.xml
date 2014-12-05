@@ -41,6 +41,13 @@
                     android:layout_height="wrap_content"
                     android:text="ReviewTextView"
                     />
+                <TextView 
+                    android:id="@+id/joke_translate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="Youdao Translate"
+                    />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

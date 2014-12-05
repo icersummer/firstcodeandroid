@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
 		public void run() {
 			// TODO Auto-generated method stub
 			// update UI
-			showYoudaoTV.setText(httpContent); 
+			showYoudaoTV.setText("") 
 		}
 		
 	};
@@ -97,44 +97,44 @@ public class MainActivity extends Activity {
 				}.start();
 				
 				// TODO Auto-generated method stub
-//				new AsyncTask<String, Void, Void>() {
-//
-//					@Override
-//					protected Void doInBackground(String... params) {
-//						// TODO Auto-generated method stub
-//						try {
-//							URL url = new URL(params[0]);
-//							URLConnection conn = url.openConnection();
-//							InputStream is = conn.getInputStream();
-//							InputStreamReader isr = new InputStreamReader(is,
-//									"utf-8");
-//							BufferedReader br = new BufferedReader(isr);
-//							String line;
-//							while ((line = br.readLine()) != null) {
-//								Log.i(classname, "line=" + line);
-//							}
-//							/*
-//							 * 直接这么写是不行的，会报错：
-//							 * showYoudaoTV.setText("Get HTTP done.");
-//							 * 因为Android中相关的view和控件不是线程安全的，必须单独处理。
-//							 * 必须通过Handler对象更新UI，具体看http://blog.csdn.net/djx123456/article/details/6325983。
-//							 * 
-//							 */
-//							br.close();
-//							isr.close();
-//							is.close();
-//						} catch (MalformedURLException e) {
-//							// TODO Auto-generated catch block
-//							e.printStackTrace();
-//						} catch (IOException e) {
-//							// TODO Auto-generated catch block
-//							e.printStackTrace();
-//						}
-//
-//						return null;
-//					}
-//
-//				}.execute(youdaoDemoURL);
+				new AsyncTask<String, Void, Void>() {
+
+					@Override
+					protected Void doInBackground(String... params) {
+						// TODO Auto-generated method stub
+						try {
+							URL url = new URL(params[0]);
+							URLConnection conn = url.openConnection();
+							InputStream is = conn.getInputStream();
+							InputStreamReader isr = new InputStreamReader(is,
+									"utf-8");
+							BufferedReader br = new BufferedReader(isr);
+							String line;
+							while ((line = br.readLine()) != null) {
+								Log.i(classname, "line=" + line);
+							}
+							/*
+							 * 直接这么写是不行的，会报错：
+							 * showYoudaoTV.setText("Get HTTP done.");
+							 * 因为Android中相关的view和控件不是线程安全的，必须单独处理。
+							 * 必须通过Handler对象更新UI，具体看http://blog.csdn.net/djx123456/article/details/6325983。
+							 * 
+							 */
+							br.close();
+							isr.close();
+							is.close();
+						} catch (MalformedURLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+						return null;
+					}
+
+				}.execute(youdaoDemoURL);
 				/*
 				 * 使用有道翻译的API 有道翻译API申请成功 API key：1352117898 keyfrom：jokeking •
 				 * 创建时间：2014-12-04 • 网站名称：jokeking • 网站地址：http://jokeking.com
