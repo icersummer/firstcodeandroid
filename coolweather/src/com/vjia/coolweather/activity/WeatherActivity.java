@@ -1,10 +1,11 @@
 package com.vjia.coolweather.activity;
 
+import com.vjia.coolweather.R;
 import com.vjia.coolweather.util.HttpCallbackListener;
 import com.vjia.coolweather.util.HttpUtil;
 import com.vjia.coolweather.util.Utility;
 
-import android.R;
+//import android.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -39,7 +40,7 @@ public class WeatherActivity extends Activity implements OnClickListener{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.weather_layout);
 		// initilize
-		weatherInfoLayout = (TextView) findViewById(R.id.weather_info_layout);
+		weatherInfoLayout = (LinearLayout) findViewById(R.id.weather_info_layout);
 		cityNameText = (TextView) findViewById(R.id.publish_text);
 		publishText = (TextView) findViewById(R.id.publish_text);
 		weatherDespText = (TextView) findViewById(R.id.weather_desp);

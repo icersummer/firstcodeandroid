@@ -78,7 +78,7 @@
                     android:textSize="40sp" />
 
                 <LinearLayout
-                    android:layout_width="wrap_center"
+                    android:layout_width="wrap_content"
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:orientation="horizontal" >

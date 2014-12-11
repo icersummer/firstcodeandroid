@@ -110,7 +110,7 @@ public class ChooseAreaActivity extends Activity {
 			adapter.notifyDataSetChanged();
 			listView.setSelection(0);
 			titleText.setText("ÖÐ¹ú");
-			currentLevel = this.LEVEL_PROVINCE;
+			currentLevel = LEVEL_PROVINCE;
 
 		} else {
 			queryFromServer(null, "province");
