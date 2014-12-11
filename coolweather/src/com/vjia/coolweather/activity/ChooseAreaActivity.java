@@ -55,10 +55,15 @@ public class ChooseAreaActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+
+		// switch city
+		// get the Intent that starts current Activity
+		Intent intent1 = getIntent();
+		boolean from_weather_activity = intent1.getBooleanExtra("from_weather_activity", false);
 		
 		// add logic to jump to WeatherActivity from ChooseAreaActivity
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		if(prefs.getBoolean("city_selected", false)){
+		if(prefs.getBoolean("city_selected", false) && !from_weather_activity){
 			Intent intent = new Intent(this, WeatherActivity.class);
 			startActivity(intent);
 			finish(); 

@@ -20,6 +20,12 @@ public class CoolWeatherDB {
 	public static final int VERSION = 1;
 	private static CoolWeatherDB coolWeatherDB;
 	private SQLiteDatabase db;
+	
+	/* for now When click CHINA , in LogCat will see java.lang.OutOfMemoryError:[memory exhausted],
+	 * so to make a province/city/county size limit, let's set 20 for now.
+	 */
+	@Deprecated
+	private int limitSize = 20;
 
 	private CoolWeatherDB(Context context) {
 		CoolWeatherOpenHelper dbHelper = new CoolWeatherOpenHelper(context,
@@ -48,6 +54,7 @@ public class CoolWeatherDB {
 		List<Province> list = new ArrayList<Province>();
 		Cursor cursor = db
 				.query("Province", null, null, null, null, null, null);
+		int i=0;
 		if (cursor.moveToFirst()) {
 			do {
 				Province province = new Province();
@@ -57,6 +64,7 @@ public class CoolWeatherDB {
 				province.setProvinceCode(cursor.getString(cursor
 						.getColumnIndex("province_code")));
 				list.add(province);
+				if((i++) > 20) break;
 			} while (cursor.moveToNext());
 		}
 		Log.d(tag, "loadProvinces() done.");
@@ -78,6 +86,7 @@ public class CoolWeatherDB {
 		List<City> list = new ArrayList<City>();
 		Cursor cursor = db.query("City", null, "province_id=?",
 				new String[] { String.valueOf(provinceId) }, null, null, null);
+		int i=0;
 		if (cursor.moveToFirst()) {
 			do {
 				City city = new City();
@@ -88,6 +97,7 @@ public class CoolWeatherDB {
 						.getColumnIndex("city_code")));
 				city.setProvinceId(provinceId);
 				list.add(city);
+				if((i++) > 20) break;
 			} while (cursor.moveToFirst());
 		}
 		return list;
@@ -108,6 +118,7 @@ public class CoolWeatherDB {
 		List<County> list = new ArrayList<County>();
 		Cursor cursor = db.query("County", null, "city_id=?",
 				new String[] { String.valueOf(cityId) }, null, null, null);
+		int i=0;
 		if (cursor.moveToFirst()) {
 			do {
 				County county = new County();
@@ -118,6 +129,7 @@ public class CoolWeatherDB {
 						.getColumnIndex("county_code")));
 				county.setCityId(cityId);
 				list.add(county);
+				if((i++) > 20) break;
 			} while (cursor.moveToFirst());
 		}
 		return list;
