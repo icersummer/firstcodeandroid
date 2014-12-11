@@ -8,3 +8,26 @@
 {"content":"kkkkkkkk", "number":"10000"}
 ]
 }
+
+# sample 
+{
+"employees": [
+{ "firstName":"John" , "lastName":"Doe" },
+{ "firstName":"Anna" , "lastName":"Smith" },
+{ "firstName":"Peter" , "lastName":"Jones" }
+]
+}
+
+var employees = [
+{ "firstName":"Bill" , "lastName":"Gates" },
+{ "firstName":"George" , "lastName":"Bush" },
+{ "firstName":"Thomas" , "lastName": "Carter" }
+];
+employees[0].lastName;
+#update
+employees[0].lastName = "Jobs";
+
+
+# file type .json
+# MIME type: application/json
+
