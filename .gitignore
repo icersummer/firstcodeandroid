@@ -14,3 +14,5 @@ hs_err_pid*
 
 #ignore bin/classes
 #HelloAndroid/bin/
+
+BookCollector/bin/
