@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:db="http://www.douban.com/xmlns/"
+	xmlns:gd="http://schemas.google.com/g/2005" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/"
+	xmlns:opensearch="http://a9.com/-/spec/opensearchrss/1.0/">
+	<id>http://api.douban.com/book/subject/2629136</id>
+	<title>Pragmatic Unit Testing in Java with JUnit</title>
+	<category scheme="http://www.douban.com/2007#kind" term="http://www.douban.com/2007#book" />
+	<author>
+		<name>Andy Hunt</name>
+	</author>
+	<author>
+		<name>Dave Thomas</name>
+	</author>
+	<link href="http://api.douban.com/book/subject/2629136" rel="self" />
+	<link href="http://book.douban.com/subject/2629136/" rel="alternate" />
+	<link href="http://img5.douban.com/spic/s3542016.jpg" rel="image" />
+	<link href="http://m.douban.com/book/subject/2629136/" rel="mobile" />
+	<summary>Learn how to improve your Java coding skills using unit
+		testing. Despite it's name, unit testing is really a coding technique,
+		not a testing technique. Unit testing is done by programmers, for
+		programmers. It's primarily for our benefit: we get improved
+		confidence in our code, better ability to make deadlines, less time
+		spent in the debugger, and less time beating on the code to make it
+		work correctly. This book shows how to write tests, but more
+		importantly, it goes where other books fear to tread and gives you
+		concrete advice and examples of what to test - the common things that
+		go wrong in all of our programs. Discover the tricky hiding places
+		where bugs breed, and how to catch them using the freely available
+		JUnit framework. It's easy to learn how to think of all the things in
+		your code that are likely to break. We'll show you how with helpful
+		mnemonics, summarized in a handy tip sheet to help you remember all
+		this stuff. With this book you will: write better code, and take less
+		time to write it; discover the tricky places where bugs breed; learn
+		how to think of all the things that could go wrong; test individual
+		pieces of code without having to include the whole project; and test
+		effectively with the whole team. We'll also cover how to use Mock
+		Objects for testing, how to write high quality test code, and how to
+		use unit testing to improve your design skills. We'll show you
+		frequent &quot;gotchas&quot; - along with the fixes - to save you time
+		when problems come up. We'll show you how with helpful mnemonics,
+		summarized in a handy tip sheet. But the best part is that you don't
+		need a sweeping mandate to change your whole team or your whole
+		company. You don't need to adopt Extreme Programming or Test-Driven
+		Development, or change your development process in order to reap the
+		proven benefits of unit testing. You can start unit testing, the
+		pragmatic way, right away.</summary>
+	<db:attribute name="isbn10">0974514012</db:attribute>
+	<db:attribute name="isbn13">9780974514017</db:attribute>
+	<db:attribute name="title">Pragmatic Unit Testing in Java with JUnit</db:attribute>
+	<db:attribute name="pages">160</db:attribute>
+	<db:attribute name="author">Andy Hunt</db:attribute>
+	<db:attribute name="author">Dave Thomas</db:attribute>
+	<db:attribute name="price">USD 29.95</db:attribute>
+	<db:attribute name="publisher">The Pragmatic Programmers
+	</db:attribute>
+	<db:attribute name="binding">Paperback</db:attribute>
+	<db:attribute name="pubdate">2003-09</db:attribute>
+	<db:tag count="1" name="java" />
+	<db:tag count="1" name="junit" />
+	<gd:rating average="0" max="10" min="0" numRaters="1" />
+</entry>
