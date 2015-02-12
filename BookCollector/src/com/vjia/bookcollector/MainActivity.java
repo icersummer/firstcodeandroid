@@ -1,6 +1,8 @@
 package com.vjia.bookcollector;
 
 
+import com.vjia.bookcollector.isbn.IsbnFileUtils;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -69,6 +71,8 @@ public class MainActivity extends Activity {
 				Log.v("MainActivity", String.format("%s = %s", "data.type", data.getType()));
 				Log.v("MainActivity", String.format("%s = %s", "data.toString", data.toString()));
 				Log.v("MainActivity", String.format("%s = %s", "data.uri", data.toURI()));
+				
+				IsbnFileUtils.generateResultInTextInDisk(bundle.getString("result"));
 			}
 			break;
 		}
