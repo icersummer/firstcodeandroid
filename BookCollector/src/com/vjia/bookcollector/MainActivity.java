@@ -38,7 +38,6 @@ public class MainActivity extends Activity {
 		//扫描完了之后调到该界面
 		Button mButton = (Button) findViewById(R.id.button1);
 		mButton.setOnClickListener(new OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
@@ -47,15 +46,35 @@ public class MainActivity extends Activity {
 				startActivityForResult(intent, SCANNIN_GREQUEST_CODE);
 			}
 		});
+		
+		//test code
+		Button test_btn_start_main2 = (Button)findViewById(R.id.test_btn_start_main2);
+		test_btn_start_main2.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent();
+				intent.setClass(MainActivity.this, Main2Activity.class);
+				startActivity(intent);
+			}
+		});
 	}
-	
 	
 	@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
 		case SCANNIN_GREQUEST_CODE:
-			if(resultCode == RESULT_OK){
+			
+			// instead of show detail scan msg in Main Activity, we will show the msg in a new activity
+			Intent intent = new Intent();
+			intent.setClass(MainActivity.this, BookInfoActivity.class);
+			Bundle bundle = data.getExtras();
+			intent.putExtras(bundle);
+			intent.putExtra("book_isbn", bundle.getString("result"));
+			intent.putExtra("bitmap_parcelable", data.getParcelableExtra("bitmap"));
+			startActivity(intent);
+			
+/*			if(resultCode == RESULT_OK){
 				Bundle bundle = data.getExtras();
 				//显示扫描到的内容
 				mTextView.setText(bundle.getString("result"));
@@ -73,7 +92,7 @@ public class MainActivity extends Activity {
 				Log.v("MainActivity", String.format("%s = %s", "data.uri", data.toURI()));
 				
 				IsbnFileUtils.generateResultInTextInDisk(bundle.getString("result"));
-			}
+			}*/
 			break;
 		}
     }	

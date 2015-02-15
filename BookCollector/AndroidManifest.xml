@@ -32,6 +32,14 @@
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
         
+        <activity 
+            android:name=".Main2Activity"
+            ></activity>
+        
+        <activity 
+            android:name=".BookInfoActivity"
+            ></activity>
+        
     </application>
     
     
