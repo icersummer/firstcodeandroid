@@ -12,3 +12,6 @@ Note:
 -----
 QR scan实现参考自代码：http://dldx.csdn.net/fd.php?i=428159902193072&s=0439db332c818f36f57060e6778c2e65
 
+
+how to set android:gravity, refer http://blog.csdn.net/aminfo/article/details/7784229
+

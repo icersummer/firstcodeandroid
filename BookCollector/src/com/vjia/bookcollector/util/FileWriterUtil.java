@@ -1,11 +1,15 @@
 package com.vjia.bookcollector.util;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Field;
 
+import android.app.Activity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.vjia.bookcollector.pojo.BookEntity;
 
@@ -21,9 +25,21 @@ import com.vjia.bookcollector.pojo.BookEntity;
  * 
  */
 public class FileWriterUtil {
-	
-	private static final String CLASSNAME = FileWriterUtil.class.getName();
 
+	private static final String CLASSNAME = FileWriterUtil.class.getName();
+	
+	/**
+	* Enumeration for permissions.
+	* <p>
+	*/
+	private static enum ReadPermission {
+		VIEW,
+		CREATE,
+		EDIT,
+		DELETE
+	}
+
+	
 	/**
 	 * return the generated file_name
 	 * 
@@ -31,12 +47,15 @@ public class FileWriterUtil {
 	 * @return
 	 */
 	public static String createAndPersisteFile(BookEntity book) {
+		if (book == null)
+			return null;
+
 		String fileName = book.getIsbn13();
 		String fileContent = getFileContentInPropertiesFormat(book);
-		
+
 		boolean created = createFile(fileName, fileContent);
-		
-		if(created) {
+
+		if (created) {
 			Log.i(CLASSNAME, "book file created : " + fileName);
 		} else {
 			Log.e(CLASSNAME, "!! error occur, check logs : " + fileName);
@@ -50,12 +69,12 @@ public class FileWriterUtil {
 		String bashFilePath = "";
 		String currentFilePath = bashFilePath + "\\books_info\\" + fileName;
 		File file = new File(currentFilePath);
-		if(file.exists()) {
+		if (file.exists()) {
 			// report error, and return false
 			Log.e(CLASSNAME, "erro : file exist already : " + currentFilePath);
 			return false;
 		}
-		
+
 		try {
 			boolean created = file.createNewFile();
 			// append content
@@ -67,7 +86,7 @@ public class FileWriterUtil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return true;
 	}
 

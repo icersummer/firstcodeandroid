@@ -13,6 +13,7 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
@@ -33,6 +34,7 @@ import com.mining.app.zxing.view.ViewfinderView;
  */
 public class MipcaActivityCapture extends Activity implements Callback {
 
+	private static final String CLASSNAME = MipcaActivityCapture.class.getName();
 	private CaptureActivityHandler handler;
 	private ViewfinderView viewfinderView;
 	private boolean hasSurface;
@@ -53,13 +55,13 @@ public class MipcaActivityCapture extends Activity implements Callback {
 		CameraManager.init(getApplication());
 		viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
 		
+		// the Button to return to Homepage
 		Button mButtonBack = (Button) findViewById(R.id.button_back);
 		mButtonBack.setOnClickListener(new OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
+				Log.d(CLASSNAME, "Return pressed, be to finish current Activity...");
 				MipcaActivityCapture.this.finish();
-				
 			}
 		});
 		hasSurface = false;
@@ -119,15 +121,21 @@ public class MipcaActivityCapture extends Activity implements Callback {
 			Toast.makeText(MipcaActivityCapture.this, "Scan failed!", Toast.LENGTH_SHORT).show();
 		}else {
 			Intent resultIntent = new Intent();
+			resultIntent.setClass(MipcaActivityCapture.this, BookInfoActivity.class);
 			Bundle bundle = new Bundle();
 			bundle.putString("result", resultString);
 			bundle.putParcelable("bitmap", barcode);
 			resultIntent.putExtras(bundle);
-			this.setResult(RESULT_OK, resultIntent);
+//			this.setResult(RESULT_OK, resultIntent);
+			startActivity(resultIntent);
 		}
-		MipcaActivityCapture.this.finish();
+//		MipcaActivityCapture.this.finish();
 	}
 	
+	/**
+	 * call the handler - CaptureActivityHandler - to process the scanned code
+	 * @param surfaceHolder
+	 */
 	private void initCamera(SurfaceHolder surfaceHolder) {
 		try {
 			CameraManager.get().openDriver(surfaceHolder);
@@ -160,7 +168,6 @@ public class MipcaActivityCapture extends Activity implements Callback {
 	@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
 		hasSurface = false;
-
 	}
 
 	public ViewfinderView getViewfinderView() {
@@ -173,7 +180,6 @@ public class MipcaActivityCapture extends Activity implements Callback {
 
 	public void drawViewfinder() {
 		viewfinderView.drawViewfinder();
-
 	}
 
 	private void initBeepSound() {

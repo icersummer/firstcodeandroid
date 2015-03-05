@@ -15,86 +15,69 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	private final static int SCANNIN_GREQUEST_CODE = 1;
-	/**
-	 * 显示扫描结果
-	 */
-	private TextView mTextView ;
-	/**
-	 * 显示扫描拍的图片
-	 */
-	private ImageView mImageView;
 	
+	private final static String CLASSNAME = MainActivity.class.getName();
+	
+	// int[] array to store IMAGEs
+	private int[] photo = {R.drawable.nav_menu_home_ph, R.drawable.nav_menu_hot_ph,
+			R.drawable.nav_menu_category_ph,R.drawable.nav_menu_like_ph};
+	private int[] photoSelected = {R.drawable.nav_menu_home_selected_ph,
+			R.drawable.nav_menu_hot_selected_ph,
+			R.drawable.nav_menu_category_active_ph,
+			R.drawable.nav_menu_like_active_ph};
+		
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		mTextView = (TextView) findViewById(R.id.result); 
-		mImageView = (ImageView) findViewById(R.id.qrcode_bitmap);
-		
-		//点击按钮跳转到二维码扫描界面，这里用的是startActivityForResult跳转
-		//扫描完了之后调到该界面
-		Button mButton = (Button) findViewById(R.id.button1);
+		//点击按钮跳转到二维码扫描界面
+		Button mButton = (Button) findViewById(R.id.main2_start_scan);
 		mButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
 				intent.setClass(MainActivity.this, MipcaActivityCapture.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivityForResult(intent, SCANNIN_GREQUEST_CODE);
+				startActivity(intent);
 			}
 		});
 		
-		//test code
-		Button test_btn_start_main2 = (Button)findViewById(R.id.test_btn_start_main2);
-		test_btn_start_main2.setOnClickListener(new OnClickListener(){
+		//the button to show all local scanned books
+		Button main2_show_booklist = (Button)findViewById(R.id.main2_show_booklist);
+		main2_show_booklist.setOnClickListener(new OnClickListener(){
 			@Override
-			public void onClick(View v) {
+			public void onClick(View view) {
 				Intent intent = new Intent();
-				intent.setClass(MainActivity.this, Main2Activity.class);
+				intent.setClass(MainActivity.this, BookListActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		// test button to go to UI test layout
+		Button ui_test_button = (Button) findViewById(R.id.ui_test_button);
+		ui_test_button.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent();
+				intent.setClass(MainActivity.this, UITestActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+
+		// test button to go to UI Relative layout
+		Button ui_relative_layout_test_button = (Button) findViewById(R.id.ui_relative_layout_test_button);
+		ui_relative_layout_test_button.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent();
+				intent.setClass(MainActivity.this, UiRelativeLayoutTestActivity.class);
 				startActivity(intent);
 			}
 		});
 	}
 	
-	@Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-		case SCANNIN_GREQUEST_CODE:
-			
-			// instead of show detail scan msg in Main Activity, we will show the msg in a new activity
-			Intent intent = new Intent();
-			intent.setClass(MainActivity.this, BookInfoActivity.class);
-			Bundle bundle = data.getExtras();
-			intent.putExtras(bundle);
-			intent.putExtra("book_isbn", bundle.getString("result"));
-			intent.putExtra("bitmap_parcelable", data.getParcelableExtra("bitmap"));
-			startActivity(intent);
-			
-/*			if(resultCode == RESULT_OK){
-				Bundle bundle = data.getExtras();
-				//显示扫描到的内容
-				mTextView.setText(bundle.getString("result"));
-				//显示
-				mImageView.setImageBitmap((Bitmap) data.getParcelableExtra("bitmap"));
-				// logs 
-				Log.v("MainActivity", "bundle = "+bundle.toString());
-				Log.v("MainActivity", "bundle.result = "+bundle.getString("result"));
-				Log.v("MainActivity", String.format("%s = %s", "data.action", data.getAction()));
-				Log.v("MainActivity", String.format("%s = %s", "data.dataString", data.getDataString()));
-				Log.v("MainActivity", String.format("%s = %s", "data.package", data.getPackage()));
-				Log.v("MainActivity", String.format("%s = %s", "data.scheme", data.getScheme()));
-				Log.v("MainActivity", String.format("%s = %s", "data.type", data.getType()));
-				Log.v("MainActivity", String.format("%s = %s", "data.toString", data.toString()));
-				Log.v("MainActivity", String.format("%s = %s", "data.uri", data.toURI()));
-				
-				IsbnFileUtils.generateResultInTextInDisk(bundle.getString("result"));
-			}*/
-			break;
-		}
-    }	
 
 }

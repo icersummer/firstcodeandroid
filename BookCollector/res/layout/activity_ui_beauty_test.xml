@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="扫描" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="已存图书信息列表" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="导出图书信息" />
+<!-- comment as it alway try to get focused
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" 
+        android:text="点击开始输入">
+    </EditText>
+ -->
+
+    
+    <ImageView 
+        android:id="@+id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dip"
+        android:src="@drawable/ic_launcher" />
+    
+
+        <Button 
+        android:id="@+id/btn_left_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_icon"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:textColor="#AAAAAA"
+        android:textSize="16dip"
+        android:gravity="center"
+        android:background="@drawable/chatfrom_bg_normal"
+        android:text="哈哈哈 看不见了"
+        />
+        
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_icon"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:textColor="#404040"
+        android:textSize="16dip"
+        android:gravity="center"
+        android:paddingLeft="10dip"
+        android:background="@drawable/chatfrom_bg_normal"
+        android:drawableLeft="@drawable/chatfrom_group_voice_playing_f3"
+        android:text="Button4" />
+
+    <TextView
+        android:id="@+id/tv_time_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/chatsystem_bg"
+        android:textColor="#404040"
+        android:textSize="13dip"
+        android:gravity="center"        
+        android:text="两会召开哈哈哈"
+        />
+    <Button
+        android:id="@+id/btn_right_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_icon"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:textColor="#404040"
+        android:textSize="16dip"
+        android:gravity="center"
+        android:background="@drawable/chatto_bg_normal"
+        android:text="哈哈 哈" 
+        />
+    
+    <ImageView 
+        android:id="@+id/iv_right_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_icon"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:textColor="#404040"
+        android:textSize="16dip"
+        android:padding="3dip"
+        android:gravity="center"
+        android:background="@drawable/chatto_bg_normal"
+        />
+    
+    <Button 
+        android:id="@+id/btn_right_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_icon"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:textColor="#feeeee"
+        android:textSize="16dip"
+        android:gravity="center"
+        android:paddingRight="10dip"
+        android:background="@drawable/chatto_bg_normal"
+        android:drawableRight="@drawable/chatto_voice_playing"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_right_audio_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/btn_right_audio"
+        android:textColor="#aaaaaa"
+        android:textSize="16dip"
+        android:gravity="center"
+        android:text="一个字符显示框"
+        />
+    
+</LinearLayout>
