@@ -49,6 +49,9 @@ public class BookListActivity extends Activity {
 		// TODO Auto-generated method stub
 		List<BookEntity> list = new ArrayList<BookEntity>();
 		BookEntity book = new BookEntity("english", "max");
+		book.setIsbn13("9999999999999");
+		book.setPrice("$909");
+		book.setLink("http://google.com?hongkong");
 		list.add(book);
 		for(int i =0; i<20; i++){
 			book = new BookEntity("title"+i,"author"+i);

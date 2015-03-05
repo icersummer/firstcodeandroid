@@ -51,12 +51,15 @@ public final class R {
     }
     public static final class id {
         public static final int about_version_code=0x7f07000e;
-        public static final int action_settings=0x7f070031;
+        public static final int action_settings=0x7f070034;
         /**  Messages IDs 
          */
         public static final int auto_focus=0x7f070000;
         public static final int book_author=0x7f070030;
         public static final int book_isbn=0x7f07002a;
+        public static final int book_isbn13=0x7f070031;
+        public static final int book_link=0x7f070032;
+        public static final int book_price=0x7f070033;
         public static final int book_title=0x7f07002f;
         public static final int btn_left_text=0x7f070022;
         public static final int btn_right_audio=0x7f070027;
