@@ -1,0 +1,3 @@
+title1,title2,title3,title4
+author,binding,isbn10,isbn13,link,price,pubdate,publisher,summary,tags,title,
+Andy Hunt**Dave Thomas,null,null,9780974514017,http://book.douban.com/subject/2629136/,USD 29.95,null,null,null,null,Pragmatic Unit Testing in Java with JUnit,
