@@ -2,34 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/sky_background"
     android:orientation="vertical" >
     
     <Button 
         android:id="@+id/return_to_homepage"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:text="Return to Homepage"
-        android:gravity="top"
-        android:textColor="#ffffff"
-        android:background="#ff0000"
-        android:layout_margin="1dp" />
+        android:gravity="center"
+        android:textColor="#404040"
+        android:background="@drawable/chatfrom_bg_normal"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:text="Book ISBN:"
-        android:gravity="bottom"
-        android:textColor="#ffffff"
-        android:background="#ff0000"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"
+        android:background="@drawable/mmtitle_bg_alpha"
         android:layout_margin="1dp" />
     <TextView
         android:id="@+id/book_isbn"
         android:layout_width="fill_parent"
         android:layout_height="35dp"
-        android:lines="2"
+        android:lines="1"
         android:gravity="center_horizontal"
         android:textColor="@android:color/black"
         android:textSize="16sp" 
-        android:background="#ff0000"
+        android:background="@drawable/aloha_light_blue_background"
         android:layout_margin="1dp" />
      <TextView
         android:layout_width="wrap_content"
@@ -37,18 +40,19 @@
         android:text="Result Info:"
         android:gravity="left"
         android:textSize="16sp" 
-        android:textColor="#ffffff"
-        android:background="#ff0000"
+        android:textColor="@android:color/white"
+        android:background="@drawable/mmtitle_bg_alpha"
         android:layout_margin="1dp" />
     <TextView
         android:id="@+id/result_info"
         android:layout_width="fill_parent"
         android:layout_height="35dp"
-        android:lines="2"
+        android:lines="1"
         android:gravity="center_horizontal"
+        android:layout_gravity="center"
         android:textColor="@android:color/black"
         android:textSize="16sp" 
-        android:background="#ff0000"
+        android:background="@drawable/aloha_light_blue_background"
         android:layout_margin="1dp" />
     <ImageView
         android:id="@+id/qrcode_bitmap_after_scan"

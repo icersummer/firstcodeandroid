@@ -16,6 +16,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * the activity to show the detail info of scan; will be redirected by
@@ -52,7 +53,7 @@ public class BookInfoActivity extends Activity {
 		String generatedCsvName = queryAndStore(s_book_isbn);
 		if(null != generatedCsvName){
 			// TODO prompt into a Pop message, like alert
-			
+			Toast.makeText(this, "Book Info File created : " + generatedCsvName, Toast.LENGTH_LONG).show();
 		}
 		
 		//TODO another good way to add Linstener

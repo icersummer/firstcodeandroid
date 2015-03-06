@@ -26,28 +26,31 @@ public final class R {
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int chatfrom_bg_normal=0x7f020000;
-        public static final int chatfrom_group_voice_playing_f3=0x7f020001;
-        public static final int chatsystem_bg=0x7f020002;
-        public static final int chatting_bg_default=0x7f020003;
-        public static final int chatto_bg_normal=0x7f020004;
-        public static final int chatto_voice_playing=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int mm_title_back_btn=0x7f020007;
-        public static final int mm_title_back_focused=0x7f020008;
-        public static final int mm_title_back_normal=0x7f020009;
-        public static final int mm_title_back_pressed=0x7f02000a;
-        public static final int mmfooter_bg=0x7f02000b;
-        public static final int mmtitle_bg_alpha=0x7f02000c;
-        public static final int nav_menu_category_active_ph=0x7f02000d;
-        public static final int nav_menu_category_ph=0x7f02000e;
-        public static final int nav_menu_home_ph=0x7f02000f;
-        public static final int nav_menu_home_selected_ph=0x7f020010;
-        public static final int nav_menu_hot_ph=0x7f020011;
-        public static final int nav_menu_hot_selected_ph=0x7f020012;
-        public static final int nav_menu_like_active_ph=0x7f020013;
-        public static final int nav_menu_like_ph=0x7f020014;
-        public static final int test=0x7f020015;
+        public static final int aloha_light_blue_background=0x7f020000;
+        public static final int chatfrom_bg_normal=0x7f020001;
+        public static final int chatfrom_group_voice_playing_f3=0x7f020002;
+        public static final int chatsystem_bg=0x7f020003;
+        public static final int chatting_bg_default=0x7f020004;
+        public static final int chatto_bg_normal=0x7f020005;
+        public static final int chatto_voice_playing=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int mm_title_back_btn=0x7f020008;
+        public static final int mm_title_back_focused=0x7f020009;
+        public static final int mm_title_back_normal=0x7f02000a;
+        public static final int mm_title_back_pressed=0x7f02000b;
+        public static final int mmfooter_bg=0x7f02000c;
+        public static final int mmtitle_bg_alpha=0x7f02000d;
+        public static final int nav_menu_category_active_ph=0x7f02000e;
+        public static final int nav_menu_category_ph=0x7f02000f;
+        public static final int nav_menu_home_ph=0x7f020010;
+        public static final int nav_menu_home_selected_ph=0x7f020011;
+        public static final int nav_menu_hot_ph=0x7f020012;
+        public static final int nav_menu_hot_selected_ph=0x7f020013;
+        public static final int nav_menu_like_active_ph=0x7f020014;
+        public static final int nav_menu_like_ph=0x7f020015;
+        public static final int raindrop=0x7f020016;
+        public static final int sky_background=0x7f020017;
+        public static final int test=0x7f020018;
     }
     public static final class id {
         public static final int about_version_code=0x7f07000e;

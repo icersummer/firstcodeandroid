@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -19,16 +20,7 @@ public class CsvReaderUtil {
 	private static final String tag = CsvReaderUtil.class.getName();
 
 	public static List<BookEntity> readBookCsvs(Activity activity) {
-		// TODO Auto-generated method stub
-
-		// try {
-		// FileInputStream inputStream = activity.openFileInput("fileName");
-		// byte[] bytes = new byte[1024];
-		// ByteArrayOutputStream arrayOutputStream = new
-		// ByteArrayOutputStream();
-		// while (inputStream.read(bytes) != -1) {
-		//
-		// }
+		List<BookEntity> books = new ArrayList<BookEntity>();
 
 		// currentAppFilesFolder : /data/data/com.vjia.bookcollector/files/
 		File filesDir = activity.getFilesDir();
@@ -59,6 +51,7 @@ public class CsvReaderUtil {
 				BookEntity book = new BookEntity();
 				convertToEntity(book, content);
 				Log.v(tag, "content="+content);
+				books.add(book);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -67,15 +60,8 @@ public class CsvReaderUtil {
 				e.printStackTrace();
 			}
 		}
-		// } catch (FileNotFoundException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
 
-		return null;
+		return books;
 	}
 
 	/**
@@ -91,7 +77,7 @@ public class CsvReaderUtil {
 				content.indexOf("\r"),
 				content.indexOf("\n"),
 				content.indexOf("\r\n")
-				);
+				);// r.index=-1, n.index=77, rn.index=-1
 		Log.v(tag, msg);
 		
 		// HARD CODE TO EXTRACT THE CONTENT FOR NOW
@@ -106,6 +92,7 @@ public class CsvReaderUtil {
 		int a = tmpContent.charAt(0);
 		Log.e(tag, "aint="+a);
 		
+		tmpContent = tmpContent.replace("\n", "");
 		String[] tagValues = tmpContent.split(",");
 		// FOR NOW ONLY CARE ABOUT : AUTHOR, ISBN13, LINK, PRICE, TITLE
 		int idx_author = 0;//replacement.indexOf("AUTHOR");//TODO , WRONG LOGIC
@@ -127,7 +114,6 @@ public class CsvReaderUtil {
 		book.setTitle(title);
 		
 		Log.v(tag, book.toString());
-		
 	}
 
 }

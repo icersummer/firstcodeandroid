@@ -6,6 +6,7 @@ import java.util.List;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.vjia.bookcollector.adapter.BookAdapter;
 import com.vjia.bookcollector.pojo.BookEntity;
@@ -28,9 +29,7 @@ public class BookListActivity extends Activity {
 		BookAdapter adapter = new BookAdapter(lists, this);
 		ListView lv = (ListView) findViewById(R.id.lv);
 		lv.setAdapter(adapter);
-		
-		
-		
+		Toast.makeText(this, "Total Files : " + lists.size(), Toast.LENGTH_LONG).show();
 	}
 
 	private List<BookEntity> buildBookList() {
