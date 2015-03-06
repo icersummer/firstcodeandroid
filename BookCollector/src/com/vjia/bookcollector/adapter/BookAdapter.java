@@ -49,16 +49,18 @@ public class BookAdapter extends BaseAdapter{
 			convertView = LayoutInflater.from(context).inflate(R.layout.book_list_inner, null);
 			holder = new ViewHolder();
 			BookEntity entity = lists.get(position);
+			
 			holder.book_title = (TextView) convertView.findViewById(R.id.book_title);
 			holder.book_author = (TextView) convertView.findViewById(R.id.book_author);
 			holder.book_isbn13 = (TextView) convertView.findViewById(R.id.book_isbn13);
 			holder.book_price = (TextView) convertView.findViewById(R.id.book_price);
 			holder.book_link = (TextView) convertView.findViewById(R.id.book_link);
-			holder.book_title.setText(entity.getTitle());
-			holder.book_author.setText(entity.getAuthor());
-			holder.book_isbn13.setText(entity.getIsbn13());
-			holder.book_price.setText(entity.getPrice());
-			holder.book_link.setText(entity.getLink());
+			
+			holder.book_title .setText("Title  : " + entity.getTitle());
+			holder.book_author.setText("Author : " + entity.getAuthor());
+			holder.book_isbn13.setText("ISBN13 : " + entity.getIsbn13());
+			holder.book_price .setText("Price  : " + entity.getPrice());
+			holder.book_link  .setText("Link   : " + entity.getLink());
 			convertView.setTag(holder);
 		}else{
 			holder = (ViewHolder) convertView.getTag();

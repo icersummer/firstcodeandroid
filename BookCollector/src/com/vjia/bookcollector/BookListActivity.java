@@ -14,7 +14,7 @@ import com.vjia.bookcollector.util.CsvReaderUtil;
 public class BookListActivity extends Activity {
 	
 	// whether we're doing a testing or run as real
-	private boolean testing = true;
+	private boolean testing = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
