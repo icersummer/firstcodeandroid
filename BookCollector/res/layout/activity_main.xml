@@ -84,7 +84,28 @@
         android:layout_below="@+id/main2_show_booklist"
         android:text="Copyright : 2015 TODO" />
     
-        
+     <ImageView
+        android:id="@+id/iv_icon_readme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="5dip"
+        android:layout_below="@+id/static_copyright_tv"
+        android:src="@drawable/ic_launcher"
+         />
+    <Button 
+        android:id="@+id/static_readme_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_icon_readme"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:layout_below="@+id/static_copyright_tv"
+        android:textSize="16dip"
+        android:gravity="center"
+        android:text="APP README" />
+    
+     <!-- 
     <ImageView
         android:id="@+id/iv_icon_3"
         android:layout_width="wrap_content"
@@ -94,19 +115,21 @@
         android:layout_below="@+id/static_copyright_tv"
         android:src="@drawable/ic_launcher"
          />
+      -->   
     
     <!-- entrance to UI test layout -->
-    <Button
-        android:id="@+id/ui_test_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Click to Test UI"
-        android:layout_gravity="center_vertical"
-        android:layout_below="@+id/static_copyright_tv"
-        android:layout_toRightOf="@+id/iv_icon_3"
-        />
     
+<!--     <Button -->
+<!--         android:id="@+id/ui_test_button" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="Click to Test UI" -->
+<!--         android:layout_gravity="center_vertical" -->
+<!--         android:layout_below="@+id/static_copyright_tv" -->
+<!--         android:layout_toRightOf="@+id/iv_icon_3" -->
+<!--         /> -->
     
+    <!-- 
     <ImageView
         android:id="@+id/iv_icon_4"
         android:layout_width="wrap_content"
@@ -116,7 +139,9 @@
         android:layout_below="@+id/iv_icon_3"
         android:src="@drawable/ic_launcher"
          />
+     -->
     <!-- entrance to UI Relative Layout test   -->
+    <!-- 
     <Button
         android:id="@+id/ui_relative_layout_test_button"
         android:layout_width="wrap_content"
@@ -126,5 +151,6 @@
         android:layout_below="@+id/ui_test_button"
         android:layout_toRightOf="@+id/iv_icon_4"
         />
+     -->
     
 </RelativeLayout>

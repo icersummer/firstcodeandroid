@@ -4,6 +4,7 @@ package com.vjia.bookcollector;
 import com.vjia.bookcollector.isbn.IsbnFileUtils;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -55,6 +56,23 @@ public class MainActivity extends Activity {
 			}
 		});
 		
+		// THE BUTTON TO SHOW README
+		Button static_readme_btn = (Button) findViewById(R.id.static_readme_btn);
+		static_readme_btn.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				String newline = "\n";
+				String msg = "3 functions :" + newline + newline
+						+ "1. Scan a book, store its info into CSV file;"+newline
+						+ "2. View all stored book CSV info;"+newline
+						+ "3. Export the stored CSV."
+						+ newline
+						+ newline;
+				alterDialog(msg);
+			}
+		});
+		
+		/*
 		// test button to go to UI test layout
 		Button ui_test_button = (Button) findViewById(R.id.ui_test_button);
 		ui_test_button.setOnClickListener(new OnClickListener(){
@@ -77,7 +95,17 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		*/
 	}
 	
-
+	private void alterDialog(String msg) {
+		// TODO Auto-generated method stub
+		new AlertDialog.Builder(this)
+				.setTitle("BOOK COLLECTOR README")
+				.setMessage(msg)
+				.setPositiveButton("È·¶¨", null)
+				.show();
+	}
 }
+
+
