@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+    
+    <EditText 
+        android:id="@+id/edittext_cardno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="27591811508"
+        />
+<!--         android:text="Click to input 11 numbers" -->
+    
+    <Button 
+        android:id="@+id/button_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click to query"
+        />
+    
+    <TextView 
+        android:id="@+id/textview_card_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="the left money"
+        />
+
+</LinearLayout>
