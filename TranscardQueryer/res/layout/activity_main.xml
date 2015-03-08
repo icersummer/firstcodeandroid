@@ -4,10 +4,18 @@
     android:orientation="vertical"
     >
     
+    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
+    
+    <ImageView 
+        android:layout_width="240dp"
+        android:layout_height="150dp"
+        android:layout_margin="3dip"
+        android:src="@drawable/badatong"
+        />
     
     <EditText 
         android:id="@+id/edittext_cardno"
