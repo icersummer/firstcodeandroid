@@ -3,7 +3,12 @@
 
     <string name="app_name">公交卡余额查询</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">公交卡余额查询</string>
     <string name="app_intro">全国城市一卡通互联互通指的是本地城市发行的城市通卡能够在加入互联互通平台的其他城市刷卡消费，同时持卡人能够享受当地刷卡的优惠政策。作为“智慧城市”整体建设中城市人群体会最深的“智慧交通”概念，“绿色、安全、畅通、便捷、实惠”这十个字已经囊括了百姓日常出行的美好愿景。而在讲求生活幸福指数的今天，这些曾经看似遥不可及的对“智慧出行”的描述，已经悄然走入了我们的日常生活。全国城市一卡通互联互通系统的整体推行，伴随着城市经济圈新概念的提出与日趋频繁的跨区域出行需求，城市通卡也逐渐成为了驱动城市间交流发展的动力源泉。</string>
+    <string name="clear_cardno">清空</string>
+    <string name="query_card">查询</string>
+    <string name="cart_type_str">公交卡类型</string>
+    <string name="cart_no_str">公交卡号</string>
+    <string name="edittext_cardtype_str">上海市公共交通卡</string>
 
 </resources>

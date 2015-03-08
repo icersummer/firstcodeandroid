@@ -2,6 +2,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg_1"
     >
     
     <!-- HEADER -->
@@ -11,7 +12,7 @@
         android:layout_height="100dp"
         android:orientation="vertical"
 	    android:gravity="center_vertical|center_horizontal"
-        android:background="@drawable/badatong"
+        android:background="@drawable/header_background"
         >
     
 	    <TextView
@@ -27,16 +28,69 @@
     </LinearLayout>
     
     <!-- BODY -->
-    <LinearLayout 
+    <RelativeLayout 
         android:id="@+id/linear_layout_body"
         android:layout_width="match_parent" 
         android:layout_height="380dp"
         android:orientation="vertical"
         >
+	    
+        <ImageView 
+            android:id="@+id/left_image_of_cardtype"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+	        android:layout_marginTop="50dp"
+	        android:layout_marginLeft="20dp"
+            android:src="@drawable/button_green"
+            />
+	    <TextView 
+	        android:id="@+id/textview_cardtype"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="50dp"
+	        android:layout_marginLeft="20dp"
+	        android:layout_toRightOf="@+id/left_image_of_cardtype"
+	        android:text="@string/cart_type_str"
+	        />
+	    
+	    <EditText 
+	        android:id="@+id/edittext_cardtype"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginLeft="20dp"
+	        android:layout_below="@+id/textview_cardtype"
+	        android:text="@string/edittext_cardtype_str"
+	        />
+	    
+	    
+	    
+        <ImageView 
+            android:id="@+id/left_image_of_cardno"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+	        android:layout_marginTop="20dp"
+	        android:layout_marginLeft="20dp"
+	        android:layout_below="@+id/edittext_cardtype"
+            android:src="@drawable/button_red"
+            />
+	    <TextView 
+	        android:id="@+id/textview_cardno"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dp"
+	        android:layout_marginLeft="20dp"
+	        android:layout_below="@+id/edittext_cardtype"
+	        android:layout_toRightOf="@+id/left_image_of_cardno"
+	        android:text="@string/cart_no_str"
+	        />
 	    <EditText 
 	        android:id="@+id/edittext_cardno"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginLeft="20dp"
+	        android:layout_below="@+id/textview_cardno"
 	        android:text="27591811508"
 	        />
 	<!--         android:text="Click to input 11 numbers" -->
@@ -45,17 +99,23 @@
 	        android:id="@+id/button_query"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="Click to query"
+	        android:layout_below="@+id/edittext_cardno"
+	        android:layout_marginLeft="20dp"
+	        android:text="@string/query_card"
 	        />
 	    
-	    <TextView 
-	        android:id="@+id/textview_card_money"
+	    <Button 
+	        android:id="@+id/button_clear"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="the left money"
+	        android:layout_below="@+id/edittext_cardno"
+	        android:layout_toRightOf="@id/button_query"
+	        android:layout_marginLeft="20dp"
+	        android:text="@string/clear_cardno"
 	        />
+	    
         
-    </LinearLayout>
+    </RelativeLayout>
     
     <!-- FOOTER -->
     <LinearLayout 
@@ -64,7 +124,7 @@
         android:layout_height="30dp"
         android:orientation="vertical"
 	    android:gravity="center_vertical|center_horizontal"
-        android:background="@drawable/badatong"
+        android:background="@drawable/footer_background"
         >
 	    <TextView
 	        android:layout_width="match_parent"

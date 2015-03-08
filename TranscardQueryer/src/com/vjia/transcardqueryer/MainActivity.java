@@ -9,6 +9,7 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -35,7 +36,7 @@ public class MainActivity extends Activity {
 		final EditText edittext_cardno = (EditText)findViewById(R.id.edittext_cardno);
 		
 		// SHOW LEFT MONEY
-		final TextView textview_card_money = (TextView)this.findViewById(R.id.textview_card_money);
+//		final TextView textview_card_money = (TextView)this.findViewById(R.id.textview_card_money);
 		
 		// START QUERY BUTTON
 		Button button_query= (Button)this.findViewById(R.id.button_query);
@@ -44,8 +45,11 @@ public class MainActivity extends Activity {
 			public void onClick(View view) {
 				String cardNo = edittext_cardno.getText().toString();
 				float money = queryMoneyByCardNo(cardNo);
-				textview_card_money.setText(money + "");
+//				textview_card_money.setText(money + "");
 				popupMoney(money);
+				Intent intent = new Intent();
+				intent.setClass(MainActivity.this, QueryResultActivity.class);
+				startActivity(intent);
 			}
 		});
 	}
