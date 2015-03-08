@@ -4,39 +4,74 @@
     android:orientation="vertical"
     >
     
+    <!-- HEADER -->
+    <LinearLayout
+        android:id="@+id/linear_layout_header"
+        android:layout_width="match_parent" 
+        android:layout_height="100dp"
+        android:orientation="vertical"
+	    android:gravity="center_vertical|center_horizontal"
+        android:background="@drawable/badatong"
+        >
     
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:textColor="@android:color/darker_gray"
+	        android:textSize="20sp"
+	        android:minWidth="200dp"
+	        android:textStyle="bold|italic"
+	        android:text="@string/hello_world" />
+        
+    </LinearLayout>
     
-    <ImageView 
-        android:layout_width="240dp"
-        android:layout_height="150dp"
-        android:layout_margin="3dip"
-        android:src="@drawable/badatong"
-        />
+    <!-- BODY -->
+    <LinearLayout 
+        android:id="@+id/linear_layout_body"
+        android:layout_width="match_parent" 
+        android:layout_height="380dp"
+        android:orientation="vertical"
+        >
+	    <EditText 
+	        android:id="@+id/edittext_cardno"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="27591811508"
+	        />
+	<!--         android:text="Click to input 11 numbers" -->
+	    
+	    <Button 
+	        android:id="@+id/button_query"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Click to query"
+	        />
+	    
+	    <TextView 
+	        android:id="@+id/textview_card_money"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="the left money"
+	        />
+        
+    </LinearLayout>
     
-    <EditText 
-        android:id="@+id/edittext_cardno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="27591811508"
-        />
-<!--         android:text="Click to input 11 numbers" -->
+    <!-- FOOTER -->
+    <LinearLayout 
+        android:id="@+id/linear_layout_footer"
+        android:layout_width="match_parent" 
+        android:layout_height="30dp"
+        android:orientation="vertical"
+	    android:gravity="center_vertical|center_horizontal"
+        android:background="@drawable/badatong"
+        >
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_vertical|center_horizontal"
+	        android:text="COPYRIGHT.2015" />
+    </LinearLayout>
     
-    <Button 
-        android:id="@+id/button_query"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Click to query"
-        />
-    
-    <TextView 
-        android:id="@+id/textview_card_money"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="the left money"
-        />
 
 </LinearLayout>
