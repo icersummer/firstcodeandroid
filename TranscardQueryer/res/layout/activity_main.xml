@@ -69,7 +69,7 @@
             android:id="@+id/left_image_of_cardno"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-	        android:layout_marginTop="20dp"
+	        android:layout_marginTop="200dp"
 	        android:layout_marginLeft="20dp"
 	        android:layout_below="@+id/edittext_cardtype"
             android:src="@drawable/button_red"
