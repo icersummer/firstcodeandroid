@@ -152,5 +152,29 @@
         android:layout_toRightOf="@+id/iv_icon_4"
         />
      -->
+     
+     <!-- A widget calling API from someone in ItEye.com -->
+       
+     <ImageView
+        android:id="@+id/iv_icon_joke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="5dip"
+        android:layout_below="@+id/static_readme_btn"
+        android:src="@drawable/ic_launcher"
+         />
+    <Button 
+        android:id="@+id/button_api_joke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_icon_joke"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:layout_below="@+id/static_readme_btn"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:text="@string/have_fun_in_joke" />
+
     
 </RelativeLayout>

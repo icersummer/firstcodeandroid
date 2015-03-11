@@ -72,6 +72,15 @@ public class MainActivity extends Activity {
 			}
 		});
 		
+		// THE BUTTON TO SHOW : HAVE FUN IN JOKE
+		Button button_api_joke = (Button)this.findViewById(R.id.button_api_joke);
+		button_api_joke.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
+		
 		/*
 		// test button to go to UI test layout
 		Button ui_test_button = (Button) findViewById(R.id.ui_test_button);
