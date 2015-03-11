@@ -77,7 +77,9 @@ public class MainActivity extends Activity {
 		button_api_joke.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				
+				Intent intent = new Intent();
+				intent.setClass(MainActivity.this, FunJokeActivity.class);
+				startActivity(intent);
 			}
 		});
 		

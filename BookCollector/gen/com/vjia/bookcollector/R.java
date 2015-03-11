@@ -59,7 +59,7 @@ public final class R {
     }
     public static final class id {
         public static final int about_version_code=0x7f07000e;
-        public static final int action_settings=0x7f070036;
+        public static final int action_settings=0x7f070038;
         /**  Messages IDs 
          */
         public static final int auto_focus=0x7f070000;
@@ -110,6 +110,8 @@ public final class R {
         public static final int split=0x7f07000f;
         public static final int static_copyright_tv=0x7f070018;
         public static final int static_readme_btn=0x7f07001a;
+        public static final int textview_joke_author=0x7f070036;
+        public static final int textview_joke_content=0x7f070037;
         public static final int textview_title=0x7f07001e;
         public static final int tv_right_audio_time=0x7f070028;
         public static final int tv_time_tip=0x7f070024;
