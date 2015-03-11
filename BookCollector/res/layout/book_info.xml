@@ -60,4 +60,16 @@
         android:layout_height="wrap_content"
         />
 
+    <TextView
+        android:id="@+id/jump_to_book"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:lines="1"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" 
+        android:background="@drawable/aloha_light_blue_background"
+        android:layout_margin="1dp" 
+        android:text="Click to jump to the book in douban.com"/>
 </LinearLayout>
