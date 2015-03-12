@@ -55,11 +55,12 @@ public final class R {
         public static final int snap01=0x7f02001a;
         public static final int snap02=0x7f02001b;
         public static final int test=0x7f02001c;
-        public static final int whatever=0x7f02001d;
+        public static final int top_bg=0x7f02001d;
+        public static final int whatever=0x7f02001e;
     }
     public static final class id {
         public static final int about_version_code=0x7f07000e;
-        public static final int action_settings=0x7f070038;
+        public static final int action_settings=0x7f07003b;
         /**  Messages IDs 
          */
         public static final int auto_focus=0x7f070000;
@@ -91,9 +92,12 @@ public final class R {
         public static final int iv_icon_joke=0x7f07001b;
         public static final int iv_icon_readme=0x7f070019;
         public static final int iv_right_image=0x7f070026;
+        public static final int joke_header_center_title=0x7f070036;
+        public static final int joke_header_left_button=0x7f070035;
+        public static final int joke_header_right_button=0x7f070037;
         public static final int jump_to_book=0x7f07002d;
         public static final int launch_product_query=0x7f070006;
-        public static final int listview_fun_joke=0x7f070035;
+        public static final int listview_fun_joke=0x7f070038;
         public static final int lv=0x7f07002e;
         public static final int main2_label=0x7f070013;
         public static final int main2_show_booklist=0x7f070017;
@@ -110,8 +114,8 @@ public final class R {
         public static final int split=0x7f07000f;
         public static final int static_copyright_tv=0x7f070018;
         public static final int static_readme_btn=0x7f07001a;
-        public static final int textview_joke_author=0x7f070036;
-        public static final int textview_joke_content=0x7f070037;
+        public static final int textview_joke_author=0x7f070039;
+        public static final int textview_joke_content=0x7f07003a;
         public static final int textview_title=0x7f07001e;
         public static final int tv_right_audio_time=0x7f070028;
         public static final int tv_time_tip=0x7f070024;

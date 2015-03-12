@@ -4,6 +4,37 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
     
+    <RelativeLayout
+       android:layout_width="match_parent" 
+       android:layout_height="100dp"
+       android:background="@drawable/top_bg"
+        >
+        <Button 
+            android:id="@+id/joke_header_left_button"
+            android:layout_width="wrap_content"
+            android:layout_height="60sp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="LEFT BUTTON"
+            />
+        
+        <TextView 
+            android:id="@+id/joke_header_center_title"
+            android:layout_width="wrap_content"
+            android:layout_height="60sp"
+            android:layout_toRightOf="@+id/joke_header_left_button"
+            android:text="HEADER TEXT"
+            />
+        <Button 
+            android:id="@+id/joke_header_right_button"
+            android:layout_width="wrap_content"
+            android:layout_height="60sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/joke_header_center_title"
+            android:text="RIGHT BUTTON"
+            />
+    </RelativeLayout>
     <ListView
         android:id="@+id/listview_fun_joke"        
         android:layout_width="match_parent"
