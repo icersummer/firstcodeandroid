@@ -8,5 +8,8 @@
     
     <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
     <string name="have_fun_in_joke">轻松一刻</string>
+    <string name="joke_new_post">新一发</string>
+    <string name="joke_login">登录</string>
+    <string name="joke_header_title">糗事百科</string>
 
 </resources>

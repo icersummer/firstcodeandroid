@@ -145,6 +145,9 @@ public final class R {
         public static final int app_name=0x7f080000;
         public static final int have_fun_in_joke=0x7f080005;
         public static final int hello_world=0x7f080002;
+        public static final int joke_header_title=0x7f080008;
+        public static final int joke_login=0x7f080007;
+        public static final int joke_new_post=0x7f080006;
         public static final int menu_settings=0x7f080003;
         public static final int scan_text=0x7f080004;
     }
