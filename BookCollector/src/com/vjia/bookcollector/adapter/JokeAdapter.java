@@ -57,7 +57,7 @@ public class JokeAdapter extends BaseAdapter {
 		}else{
 			holder = (ViewHolder) convertView.getTag();
 			holder.joke_author.setText("AUTHOR:"+joke.getAuthor());
-			holder.joke_content.setText(joke.getContent());
+			holder.joke_content.setText("CONTENT: "+joke.getContent());
 		}
 		return convertView;
 	}
