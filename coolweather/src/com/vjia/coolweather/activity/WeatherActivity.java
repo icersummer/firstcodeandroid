@@ -1,5 +1,8 @@
 package com.vjia.coolweather.activity;
 
+import net.youmi.android.banner.AdSize;
+import net.youmi.android.banner.AdView;
+
 import com.vjia.coolweather.R;
 import com.vjia.coolweather.service.AutoUpdateService;
 import com.vjia.coolweather.util.HttpCallbackListener;
@@ -72,6 +75,11 @@ public class WeatherActivity extends Activity implements OnClickListener{
 		refreshWeather = (Button)this.findViewById(R.id.refresh_weather);
 		switchCity.setOnClickListener(this);
 		refreshWeather.setOnClickListener(this);
+		
+		// INIT THE YOUMI AD BAR
+		AdView adView= new AdView(this, AdSize.FIT_SCREEN);
+		LinearLayout adLayout= (LinearLayout) this.findViewById(R.id.adLayout);
+		adLayout.addView(adView);
 	}
 
 	private void queryWeatherCode(String countyCode) {

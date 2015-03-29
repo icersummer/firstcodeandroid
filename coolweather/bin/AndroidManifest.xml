@@ -9,6 +9,13 @@
         android:targetSdkVersion="16" />
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -28,6 +35,29 @@
         
         <service android:name="com.vjia.coolweather.service.AutoUpdateService"></service>
         <receiver android:name="com.vjia.coolweather.receiver.AutoUpdateReceiver"></receiver>
+        
+        <!-- YOUMI AD API -->
+        <activity 
+            android:name="net.youmi.android.AdBrowser"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            >
+        </activity>
+        <service 
+            android:name="net.youmi.android.AdService"
+            android:exported="false"
+            ></service>
+        <receiver 
+            android:name="net.youmi.android.AdReceiver"
+            >
+            <intent-filter >
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        
+        <!-- TODO if need youmi's other format (e.g. SmartBanner), add other config -->
+        
     </application>
 
 </manifest>

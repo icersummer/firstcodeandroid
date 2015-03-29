@@ -3,6 +3,8 @@ package com.vjia.coolweather.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.youmi.android.AdManager;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -61,6 +63,9 @@ public class ChooseAreaActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
+		// YOUMI AD API
+		AdManager.getInstance(this).init("881abefb1a5045d7", "cf8cf092fe32a1b4", false);//ID, KEY, TEST_MODE
 
 		// switch city
 		// get the Intent that starts current Activity
