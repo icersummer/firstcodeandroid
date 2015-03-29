@@ -41,6 +41,13 @@ public class Utility {
 		return false;
 	}
 
+	/**
+	 * è§£æå’Œå¤„ç†æœåŠ¡å™¨è¿”å›çš„å¸‚çº§æ•°æ®
+	 * @param coolWeatherDB
+	 * @param response
+	 * @param provinceId
+	 * @return
+	 */
 	public static boolean handleCitiesResponse(CoolWeatherDB coolWeatherDB, String response, int provinceId){
 		if(!TextUtils.isEmpty(response)){
 			String[] allCities=response.split(",");
@@ -58,6 +65,13 @@ public class Utility {
 		}
 		return false;
 	}
+	/**
+	 * è§£æå’Œå¤„ç†æœåŠ¡å™¨è¿”å›çš„å¿çº§æ•°æ®
+	 * @param coolWeatherDB
+	 * @param response
+	 * @param cityId
+	 * @return
+	 */
 	public static boolean handleCountriesResponse(CoolWeatherDB coolWeatherDB, String response, int cityId){
 		if(!TextUtils.isEmpty(response)){
 			String[] allCounties=response.split(",");
@@ -78,7 +92,7 @@ public class Utility {
 	}
 	
 	/**
-	 * ½âÎö·şÎñÆ÷·µ»ØµÄJSONÊı¾İ£¬²¢½«½âÎö³öµÄÊı¾İ´æ´¢µ½±¾µØ¡£
+	 * 
 	 * @param context
 	 * @param response
 	 */
@@ -99,7 +113,7 @@ public class Utility {
 	}
 
 	/**
-	 * ½«·şÎñÆ÷·µ»ØµÄËùÓĞÌìÆøĞÅÏ¢´æ´¢µ½SharedPreferencesÎÄ¼şÖĞ
+	 * 
 	 * @param context
 	 * @param cityName
 	 * @param weatherCode
@@ -112,7 +126,7 @@ public class Utility {
 			String weatherCode, String temp1, String temp2, String weatherDesp,
 			String publishTime) {
 		// TODO Auto-generated method stub
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyyÄêMÔÂdÈÕ", Locale.CHINA);
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyyå¹´Mæœˆdæ—¥", Locale.CHINA);
 		SharedPreferences.Editor editor=PreferenceManager.getDefaultSharedPreferences(context).edit();
 		editor.putBoolean("city_selected", true);
 		editor.putString("city_name", cityName);

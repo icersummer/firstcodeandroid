@@ -8,6 +8,10 @@ import java.net.URL;
 
 public class HttpUtil {
 
+	/**
+	 * @param address URL string
+	 * @param listener HttpCallbackListener
+	 */
 	public static void sendHttpRequest(final String address,
 			final HttpCallbackListener listener) {
 		new Thread(new Runnable() {

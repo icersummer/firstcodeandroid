@@ -80,7 +80,6 @@ public class ChooseAreaActivity extends Activity {
 		listView.setAdapter(adapter);
 		coolWeatherDB = CoolWeatherDB.getInstance(this);
 		listView.setOnItemClickListener(new OnItemClickListener() {
-
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View view, int index,
 					long arg3) {
@@ -99,11 +98,13 @@ public class ChooseAreaActivity extends Activity {
 					finish();
 				}
 			}
-
 		});
-		queryProvinces();
+		queryProvinces();//åŠ è½½çœçº§æ•°æ®
 	}
 
+	/**
+	 * æŸ¥è¯¢å…¨å›½æ‰€æœ‰çš„çœï¼Œä¼˜å…ˆä»æ•°æ®åº“ä¸­æŸ¥è¯¢ï¼Œå¦‚æœæ²¡æœ‰å†å»æœåŠ¡å™¨ä¸ŠæŸ¥è¯¢
+	 */
 	private void queryProvinces() {
 		// TODO Auto-generated method stub
 		provinceList = coolWeatherDB.loadProvinces();
@@ -114,7 +115,7 @@ public class ChooseAreaActivity extends Activity {
 			}
 			adapter.notifyDataSetChanged();
 			listView.setSelection(0);
-			titleText.setText("ÖĞ¹ú");
+			titleText.setText("ä¸­å›½");
 			currentLevel = LEVEL_PROVINCE;
 
 		} else {
@@ -122,6 +123,9 @@ public class ChooseAreaActivity extends Activity {
 		}
 	}
 
+	/**
+	 * æŸ¥è¯¢é€‰ä¸­çœå†…æ‰€æœ‰çš„å¸‚ï¼Œæ•°æ®åº“æŸ¥è¯¢-æ— è®°å½•-æœåŠ¡å™¨æŸ¥è¯¢
+	 */
 	protected void queryCities() {
 		// TODO Auto-generated method stub
 		cityList = coolWeatherDB.loadCities(selectedProvince.getId());// event
@@ -143,6 +147,9 @@ public class ChooseAreaActivity extends Activity {
 
 	}
 
+	/**
+	 * æŸ¥è¯¢é€‰ä¸­å¸‚å†…æ‰€æœ‰çš„å¿ï¼Œæ•°æ®åº“æŸ¥è¯¢-æ— è®°å½•-æœåŠ¡å™¨æŸ¥è¯¢
+	 */
 	protected void queryCounties() {
 		// TODO Auto-generated method stub
 		countyList = coolWeatherDB.loadCounties(selectedCity.getId());
@@ -161,8 +168,7 @@ public class ChooseAreaActivity extends Activity {
 	}
 
 	/**
-	 * ¸ù¾İÊ¡ÊĞÏØ´úºÅ/ÀàĞÍ²éÑ¯ÆäÁĞ±íÊı¾İ
-	 * 
+	 * æ ¹æ®ä¼ å…¥çš„ä»£å·å’Œç±»å‹ä»æœåŠ¡å™¨ä¸ŠæŸ¥è¯¢çœå¸‚å¿æ•°æ®
 	 * @param code
 	 * @param type
 	 */
@@ -194,9 +200,8 @@ public class ChooseAreaActivity extends Activity {
 
 				if (result) {
 					// void android.app.Activity.runOnUiThread(Runnable action)
-					// Í¨¹ırunOnUiThread()·½·¨»Øµ½Ö÷Ïß³Ì´¦ÀíÂß¼­
+					// é€šè¿‡runOnUiThread()æ–¹æ³•å›åˆ°ä¸»çº¿ç¨‹å¤„ç†é€»è¾‘
 					runOnUiThread(new Runnable() {
-
 						@Override
 						public void run() {
 							// TODO Auto-generated method stub
@@ -209,22 +214,20 @@ public class ChooseAreaActivity extends Activity {
 								queryCounties();
 							}
 						}
-
 					});
 				}
 			}
 
 			@Override
 			public void onError(Exception e) {
-				// TODO Auto-generated method stub
-				// Í¨¹ırunOnUriThread()·½·¨»Øµ½Ö÷Ïß³Ì´¦ÀíÂß¼­
+				// é€šè¿‡runOnUiThread()æ–¹æ³•å›åˆ°ä¸»çº¿ç¨‹å¤„ç†é€»è¾‘
 				runOnUiThread(new Runnable() {
 
 					@Override
 					public void run() {
 						// TODO Auto-generated method stub
 						closeProgressDialog();
-						Toast.makeText(ChooseAreaActivity.this, "¼ÓÔØÊ§°Ü",
+						Toast.makeText(ChooseAreaActivity.this, "åŠ è½½å¤±è´¥",
 								Toast.LENGTH_SHORT).show();
 					}
 				});
@@ -237,7 +240,7 @@ public class ChooseAreaActivity extends Activity {
 	private void showProgressDialog() {
 		if (progressDialog == null) {
 			progressDialog = new ProgressDialog(this);
-			progressDialog.setMessage("ÕıÔÚ¼ÓÔØ.....");
+			progressDialog.setMessage("æ­£åœ¨åŠ è½½â€¦â€¦");
 			progressDialog.setCanceledOnTouchOutside(false);
 		}
 		progressDialog.show();
@@ -250,15 +253,15 @@ public class ChooseAreaActivity extends Activity {
 	}
 
 	/**
-	 * ²¶»ñBack°´¼ü£¬¸ù¾İµ±Ç°µÄ¼¶±ğÀ´ÅĞ¶Ï£¬´ËÊ±Ó¦¸Ã·µ»ØÊĞÁĞ±í/Ê¡ÁĞ±í/»¹ÊÇÖ±½ÓÍË³ö¡£
+	 * æ•è·BackæŒ‰é”®ï¼Œæ ¹æ®å½“å‰çš„çº§åˆ«æ¥åˆ¤æ–­ï¼Œæ­¤æ—¶åº”è¯¥è¿”å›å¸‚åˆ—è¡¨ã€çœåˆ—è¡¨ã€‚è¿˜æ˜¯ç›´æ¥é€€å‡º
 	 */
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		// super.onBackPressed();
-		if (currentLevel == this.LEVEL_COUNTY) {
+		if (currentLevel == LEVEL_COUNTY) {
 			queryCities();
-		} else if (currentLevel == this.LEVEL_CITY) {
+		} else if (currentLevel == LEVEL_CITY) {
 			queryProvinces();
 		} else {
 			// void android.app.Activity.finish()

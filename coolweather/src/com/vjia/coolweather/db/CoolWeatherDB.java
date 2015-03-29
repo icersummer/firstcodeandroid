@@ -98,7 +98,7 @@ public class CoolWeatherDB {
 				city.setProvinceId(provinceId);
 				list.add(city);
 				if((i++) > 20) break;
-			} while (cursor.moveToFirst());
+			} while (cursor.moveToNext());
 		}
 		return list;
 	}
@@ -130,7 +130,7 @@ public class CoolWeatherDB {
 				county.setCityId(cityId);
 				list.add(county);
 				if((i++) > 20) break;
-			} while (cursor.moveToFirst());
+			} while (cursor.moveToNext());
 		}
 		return list;
 	}

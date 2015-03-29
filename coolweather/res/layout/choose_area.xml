@@ -9,6 +9,7 @@
         android:layout_height="50dp"
         android:background="#484E61"
         >
+        <!-- 标题内容 -->
         <TextView
             android:id="@+id/title_text"
             android:layout_width="wrap_content"
@@ -17,12 +18,14 @@
             android:textColor="#fff"
             android:textSize="24sp"
             />
-        <ListView
-            android:id="@+id/list_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
         
     </RelativeLayout>
+    
+    <!-- 显示遍历市县数据列表 -->
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 </LinearLayout>
