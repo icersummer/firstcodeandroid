@@ -25,6 +25,9 @@
         </activity>
         
         <activity android:name="com.vjia.coolweather.activity.WeatherActivity"></activity>
+        
+        <service android:name="com.vjia.coolweather.service.AutoUpdateService"></service>
+        <receiver android:name="com.vjia.coolweather.receiver.AutoUpdateReceiver"></receiver>
     </application>
 
 </manifest>

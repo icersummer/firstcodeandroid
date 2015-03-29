@@ -1,6 +1,7 @@
 package com.vjia.coolweather.activity;
 
 import com.vjia.coolweather.R;
+import com.vjia.coolweather.service.AutoUpdateService;
 import com.vjia.coolweather.util.HttpCallbackListener;
 import com.vjia.coolweather.util.HttpUtil;
 import com.vjia.coolweather.util.Utility;
@@ -155,6 +156,10 @@ public class WeatherActivity extends Activity implements OnClickListener{
 		currentDateText.setText(prefs.getString("current_date", ""));
 		weatherInfoLayout.setVisibility(View.VISIBLE);
 		cityNameText.setVisibility(View.VISIBLE);
+		
+		// 启动后台服务，保证每8个小时自动更新天气信息
+		Intent intent= new Intent(this, AutoUpdateService.class);
+		startService(intent);
 	}
 
 	@Override
