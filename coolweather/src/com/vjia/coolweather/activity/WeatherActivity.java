@@ -41,7 +41,7 @@ public class WeatherActivity extends Activity implements OnClickListener{
 		setContentView(R.layout.weather_layout);
 		// initilize
 		weatherInfoLayout = (LinearLayout) findViewById(R.id.weather_info_layout);
-		cityNameText = (TextView) findViewById(R.id.publish_text);
+		cityNameText = (TextView) findViewById(R.id.city_name);
 		publishText = (TextView) findViewById(R.id.publish_text);
 		weatherDespText = (TextView) findViewById(R.id.weather_desp);
 		temp1Text = (TextView) findViewById(R.id.temp1);
@@ -82,12 +82,12 @@ public class WeatherActivity extends Activity implements OnClickListener{
 	}
 
 	/**
-	 * ¸ù¾İ´«ÈëµÄµØÖ·ºÍÀàĞÍÇøÏò·şÎñÆ÷²éÑ¯ÌìÆø´úºÅ»òÕßÌìÆøĞÅÏ¢
+	 * æ ¹æ®ä¼ å…¥çš„åœ°å€å’Œç±»å‹å»å‘æœåŠ¡å™¨æŸ¥è¯¢å¤©æ°”ä»£å·æˆ–è€…å¤©æ°”ä¿¡æ¯
 	 * 
 	 * @param address
 	 * @param string
 	 */
-	private void queryFromServer(String address, final String type) {
+	private void queryFromServer(final String address, final String type) {
 		// TODO Auto-generated method stub
 		HttpUtil.sendHttpRequest(address, new HttpCallbackListener() {
 
@@ -96,7 +96,7 @@ public class WeatherActivity extends Activity implements OnClickListener{
 				// TODO Auto-generated method stub
 				if ("countyCode".equals(type)) {
 					if (!TextUtils.isEmpty(response)) {
-						// ´Ó·şÎñÆ÷·µ»ØµÄÊı¾İÖĞ½âÎö³öÌìÆø´úºÅ
+						// ä»æœåŠ¡å™¨è¿”å›çš„æ•°æ®ä¸­è§£æå‡ºå¤©æ°”ä»£å·
 						String[] array = response.split("\\|");
 						if (array != null && array.length == 2) {
 							String weatherCode = array[1];
@@ -104,7 +104,7 @@ public class WeatherActivity extends Activity implements OnClickListener{
 						}
 					}
 				} else if ("weatherCode".equals(type)) {
-					// ´¦Àí·şÎñÆ÷·µ»ØµÄÌìÆøĞÅÏ¢
+					// å¤„ç†æœåŠ¡å™¨è¿”å›çš„å¤©æ°”ä¿¡æ¯
 					Utility.handleWeatherResponse(WeatherActivity.this,
 							response);
 					runOnUiThread(new Runnable() {
@@ -125,7 +125,7 @@ public class WeatherActivity extends Activity implements OnClickListener{
 					@Override
 					public void run() {
 						// TODO Auto-generated method stub
-						publishText.setText("Fail to sync the weather.");
+						publishText.setText("åŒæ­¥å¤±è´¥");
 					}
 
 				});
@@ -135,7 +135,7 @@ public class WeatherActivity extends Activity implements OnClickListener{
 	}
 
 	/**
-	 * ´ÓSharedPreferencesÎÄ¼şÖĞ¶ÁÈ¡´æ´¢µÄÌìÆøĞÅÏ¢£¬²¢ÏÔÊ¾µ½½çÃæÉÏ¡£
+	 * ä»SharedPreferencesæ–‡ä»¶ä¸­è¯»å–å­˜å‚¨çš„å¤©æ°”ä¿¡æ¯ï¼Œå¹¶æ˜¾ç¤ºåˆ°ç•Œé¢ä¸Š
 	 */
 	private void showWeather() {
 		// TODO Auto-generated method stub
@@ -145,7 +145,7 @@ public class WeatherActivity extends Activity implements OnClickListener{
 		temp1Text.setText(prefs.getString("temp1", ""));
 		temp2Text.setText(prefs.getString("temp2", ""));
 		weatherDespText.setText(prefs.getString("weather_desp", ""));
-		publishText.setText(prefs.getString("publish_time", "")+" renew");
+		publishText.setText(prefs.getString("publish_time", "")+"å‘å¸ƒ");
 		currentDateText.setText(prefs.getString("current_date", ""));
 		weatherInfoLayout.setVisibility(View.VISIBLE);
 		cityNameText.setVisibility(View.VISIBLE);
