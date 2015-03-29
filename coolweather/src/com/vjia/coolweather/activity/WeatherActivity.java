@@ -30,8 +30,14 @@ public class WeatherActivity extends Activity implements OnClickListener{
 	private TextView currentDateText;
 
 	// 2 buttons used for phase 3 APK
-	private Button switchButton;
-	private Button refreshButton;
+	/**
+	 * 切换城市按钮
+	 */
+	private Button switchCity;
+	/**
+	 * 更新天气按钮
+	 */
+	private Button refreshWeather;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +66,11 @@ public class WeatherActivity extends Activity implements OnClickListener{
 			showWeather();
 		}
 		
-		// logic for phase 3 
-		switchButton = (Button)this.findViewById(R.id.switch_city);
-		refreshButton = (Button)this.findViewById(R.id.refresh_weather);
-		switchButton.setOnClickListener(this);
-		refreshButton.setOnClickListener(this);
+		// logic for phase 3 : 切换城市、手动更新天气
+		switchCity = (Button)this.findViewById(R.id.switch_city);
+		refreshWeather = (Button)this.findViewById(R.id.refresh_weather);
+		switchCity.setOnClickListener(this);
+		refreshWeather.setOnClickListener(this);
 	}
 
 	private void queryWeatherCode(String countyCode) {
@@ -162,7 +168,7 @@ public class WeatherActivity extends Activity implements OnClickListener{
 			finish();
 			break;
 		case R.id.refresh_weather:
-			publishText.setText("Syncing...");
+			publishText.setText("同步中...");
 			SharedPreferences prefs  = PreferenceManager.getDefaultSharedPreferences(this);
 			String weatherCode = prefs.getString("weather_code", "");
 			if(!TextUtils.isEmpty(weatherCode)){

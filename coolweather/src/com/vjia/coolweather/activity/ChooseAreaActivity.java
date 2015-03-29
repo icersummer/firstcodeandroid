@@ -50,6 +50,12 @@ public class ChooseAreaActivity extends Activity {
 	 * the current level selected.
 	 */
 	private int currentLevel;
+	
+	/**
+	 * 是否从WeatherActivity中跳转过来：
+	 * 即：是否之前已经选择了County、现在通过按钮更改另一个County
+	 */
+	private boolean isFromWeatherActivity;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,12 +64,12 @@ public class ChooseAreaActivity extends Activity {
 
 		// switch city
 		// get the Intent that starts current Activity
-		Intent intent1 = getIntent();
-		boolean from_weather_activity = intent1.getBooleanExtra("from_weather_activity", false);
+		isFromWeatherActivity = getIntent().getBooleanExtra("from_weather_activity", false);
 		
 		// add logic to jump to WeatherActivity from ChooseAreaActivity
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		if(prefs.getBoolean("city_selected", false) && !from_weather_activity){
+		// 已经选择了城市且不是从WeatherActivity跳转过来，才会直接跳转到WeatherActivity
+		if(prefs.getBoolean("city_selected", false) && !isFromWeatherActivity){
 			Intent intent = new Intent(this, WeatherActivity.class);
 			startActivity(intent);
 			finish(); 
@@ -265,6 +271,11 @@ public class ChooseAreaActivity extends Activity {
 			queryProvinces();
 		} else {
 			// void android.app.Activity.finish()
+			if(isFromWeatherActivity){
+				// 如果当前页面是从WeatherActivity而来，那么按动Back键还返回之前页WeatherActivity
+				Intent intent = new Intent(this, WeatherActivity.class);
+				startActivity(intent);
+			}
 			finish();
 		}
 	}
